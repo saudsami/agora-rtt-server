@@ -26,6 +26,8 @@ public class RttTask {
     private String ossSecretKey = System.getenv("OSS_SECRET_KEY"); 
     private String ossAccessKey = System.getenv("OSS_ACCESS_KEY");
     private String ossBucketName = System.getenv("OSS_BUCKET_NAME"); 
+    private String ossBucketFolder = System.getenv("OSS_BUCKET_FOLDER"); 
+    private String ossBucketSubFolder = System.getenv("OSS_BUCKET_SUBFOLDER"); 
     private static final String baseUrl = "https://api.agora.io";
     
     // Authorization header for HTTP requests
@@ -132,8 +134,8 @@ public class RttTask {
                                                                         .put("accessKey", ossAccessKey) // Access key of oss
                                                                         .put("secretKey", ossSecretKey) // Secret key of oss
                                                                         .put("bucket", ossBucketName) // Oss bucket name
-                                                                        .put("vendor", 1) // Your Oss Vendor ID
-                                                                        .put("region", 1) // Your Oss Region ID
+                                                                        .put("vendor", 6) // Your Oss Vendor ID
+                                                                        .put("region", 0) // Your Oss Region ID
                                                                         .put("fileNamePrefix",
                                                                                 new JSONArray() // An array of directory strings to append to storage files
                                                                                         .put("folder")
